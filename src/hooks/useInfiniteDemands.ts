@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import { Demand } from '@/types/demand';
-import { fetchDemands } from '@/services/demandService';
+import { Demand } from '../domain/entities/Demand';
+import { DemandService } from '../application/services/demandService';
 
 export const useInfiniteDemands = () => {
   const [demands, setDemands] = useState<Demand[]>([]);
@@ -16,7 +16,7 @@ export const useInfiniteDemands = () => {
     
     try {
       console.log("Loading more demands with cursor:", cursor);
-      const response = await fetchDemands(cursor);
+      const response = await DemandService.getDemands(cursor);
       
       console.log("Full API response:", response);
       console.log("Demands from API:", response.data);
