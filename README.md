@@ -1,6 +1,6 @@
 # Sistema de Gerenciamento de Demandas
 
-Aplicação React com scroll infinito para visualização de demandas.
+Aplicação React para visualização de demandas.
 
 ## Instalação
 
